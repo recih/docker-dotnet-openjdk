@@ -1,8 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:5.0
 RUN apt-get update && \
-	apt-get install -y openjdk-11-jdk && \
-	apt-get install -y ant && \
-	apt-get install -y locales && \
+	mkdir /usr/share/man/man1 && \
+	apt-get install --no-install-recommends -y openjdk-11-jdk ant locales && \
 	apt-get clean
 
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
